@@ -1,27 +1,21 @@
-## Laravel PHP Framework
+## Simple blog with Laravel 5.1 and Bootstrap 3
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## System Requirements
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+We built this to run on a  machine with PHP 5.5 and MySQL 5.5.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Installation
 
-## Official Documentation
+Please check the system requirements before installing.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+1. You may install by cloning from github
+  * Github:
+    * `git clone https://github.com/qtrung1305/simple-blog`
+2. Enter your database details in `.env` file on root folder
+3. Run `php artisan migrate` to setup your database.
+4. Execute below commands to seed your tables, before executing this commands run `composer dump-autoload` to load published table seeders to the class map.
+   - `php artisan db:seed --class=ArticlesTableSeeder`
+5. Finally, you can simply run `php artisan serve`
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Support
+If you wish to support this project, send email to me: `qtrung1305@gmail.com`
