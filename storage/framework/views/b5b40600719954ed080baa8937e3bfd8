@@ -1,0 +1,50 @@
+<?php $__env->startSection('head.title'); ?>
+
+Content description
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">					
+				<a href="<?php echo e(url('/')); ?>" class="btn btn-link">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					Back to home
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h2><?php echo e($article->title); ?></h2>
+				<p><?php echo e($article->content); ?></p>
+			</div>				
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<a href="<?php echo e(route('article.edit', $article->id)); ?>" class="btn btn-info">Edit article</a>
+				
+				<?php echo Form::open([
+						'route'  => ['article.destroy',$article->id],
+						'method' => 'DELETE',
+						'style'  => 'display: inline'
+					]); ?>
+
+
+				<button class="btn btn-danger">Delete</button>
+
+				<?php echo Form::close(); ?>
+
+
+			</div>
+		</div>
+	</div>
+</div> <?php /* #content */ ?>
+
+<?php $__env->stopSection(); ?>
+
+	
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

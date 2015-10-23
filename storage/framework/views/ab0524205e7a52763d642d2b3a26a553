@@ -1,0 +1,71 @@
+<?php $__env->startSection('head.title'); ?>
+
+Add new article
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h2>Add new article</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">	
+			
+				<?php /* Them phan thong bao loi khi vi pham rules trong Form Request */ ?>
+				<?php if(count($errors) > 0): ?>
+					<div class="alert alert-danger">
+						<strong>Whoops!</strong> There were some problems with your input.<br><br>
+						<ul>
+							<?php foreach($errors->all() as $error): ?>
+								<li><?php echo e($error); ?></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
+<?php /* 				<form action="<?php echo e(route('article.store')); ?>" method = "POST" class="form-horizontal">
+
+					<?php echo e(-- Tao ra token de thong bao cho Model biet day la du lieu truyen vao hop le
+					<input type="hidden" name="_token" value="{{ csrf_token()); ?>">
+
+					<div class="form-group">
+						<label for="title" class="control-label">Title</label>
+						<input class="form-control" type="text" name="title" id="title" required placeholder="input title of article">
+					</div>
+					<div class="form-group">
+						<label for="content" class="control-label">Content</label>
+						<input class="form-control" type="text" name="content" id="content" required placeholder="input content of article">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary">Add new</button>
+					</div>
+				</form> {{-- #form */ ?>
+				
+				<?php /* Phan Form bi dong o tren co the thay the bang ben duoi the cu phap cua Laravel */ ?>
+
+				<?php echo Form::open([
+						'route' => ['article.store'],
+						'method' => 'POST',
+						'class' => 'form-horizontal'
+					]); ?>
+
+
+				<?php echo $__env->make('articles._form',['button_name' => 'Create'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				<?php echo Form::close(); ?>
+
+
+			</div>
+		</div>
+	</div>
+</div> <?php /* #content */ ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

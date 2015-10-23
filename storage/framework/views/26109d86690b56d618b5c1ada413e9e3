@@ -1,0 +1,33 @@
+<?php $__env->startSection('head.title'); ?>
+
+My BLog
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+
+			<?php foreach($articles as $a): ?>
+				<div class="col-sm-6 col-sm-offset-3">
+					<h2><?php echo e($a->title); ?></h2>
+					<p><?php echo e($a->content); ?></p>
+					<p><a href="<?php echo e(route('article.show', $a->id)); ?>">read more...</a></p>
+				</div>
+			<?php endforeach; ?>				
+
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<?php echo $articles->render(); ?>
+
+			</div>
+		</div>
+	</div>
+</div> <?php /* #content */ ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

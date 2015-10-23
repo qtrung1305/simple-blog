@@ -1,0 +1,51 @@
+<?php $__env->startSection('head.title'); ?>
+
+Edit an article
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body.content'); ?>
+
+<div id="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h2>Edit an article</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">	
+			
+				<?php /* Them phan thong bao loi khi vi pham rules trong Form Request */ ?>
+				<?php if(count($errors) > 0): ?>
+					<div class="alert alert-danger">
+						<strong>Whoops!</strong> There were some problems with your input.<br><br>
+						<ul>
+							<?php foreach($errors->all() as $error): ?>
+								<li><?php echo e($error); ?></li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
+				<?php echo Form::model($article, [
+						'route' => ['article.update',$article->id],
+						'method' => 'PUT',
+						'class' => 'form-horizontal'
+					]); ?>
+
+
+				<?php echo $__env->make('articles._form',['button_name' => 'Update'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				<?php echo Form::close(); ?>
+
+
+			</div>
+		</div>
+	</div>
+</div> <?php /* #content */ ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

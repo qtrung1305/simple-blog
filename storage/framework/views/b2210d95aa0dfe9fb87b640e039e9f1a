@@ -1,0 +1,17 @@
+<div class="form-group">
+	<?php echo Form::label('title', 'Title', ['class' => 'control-lable']); ?>
+
+	<?php echo Form::text('title', null, ['id' => 'title', 'class' => 'form-control', 'placeholder' => 'input title of article', 'required' => 'true']); ?>
+
+</div>
+
+<div class="form-group">
+	<?php echo Form::label('content', 'Content', ['class' => 'control-lable']); ?>
+
+	<?php echo Form::text('content', null, ['id' => 'content', 'class' => 'form-control', 'placeholder' => 'input content of article', 'required' => 'true']); ?>
+
+</div>
+
+<div class="form-group">
+	<?php echo Form::submit($button_name, ['class' => 'btn btn-primary']); ?>						
+</div>

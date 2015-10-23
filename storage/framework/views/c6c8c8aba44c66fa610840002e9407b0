@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Dinh nghia Page Title cho cac trang con -->
+	<title><?php echo $__env->yieldContent('head.title'); ?></title>
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+	<!-- Dinh nghia them cac CSS rieng biet cho cac trang con neu co -->
+	<?php echo $__env->yieldContent('head.css'); ?>
+</head>
+<body>
+	
+
+	<div id="header">
+
+		<?php echo $__env->make('partials.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	</div> <?php /* #Header */ ?>
+
+	<!-- Noi chen noi dung khac biet chinh cua tung trang con -->
+	<?php echo $__env->yieldContent('body.content'); ?>
+
+	<?php echo $__env->make('partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+	<!-- Noi dinh nghia them cac javascript rieng cua cac trang con neu co -->
+	<?php echo $__env->yieldContent('body.js'); ?>
+
+</body>
+</html>

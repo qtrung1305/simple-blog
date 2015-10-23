@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Show an article</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	
+
+	<div id="header">
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">VTISC.COM</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">New artice</a></li>
+				</ul>				
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</div> <?php /* #Header */ ?>
+
+	<div id="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">					
+					<a href="<?php echo e(url('/')); ?>" class="btn btn-link">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						Back to home
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<h2><?php echo e($article->title); ?></h2>
+					<p><?php echo e($article->content); ?></p>
+				</div>				
+			</div>
+		</div>
+	</div> <?php /* #content */ ?>
+
+	<div id="footer" class="text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<p>Copyright &copy; 2015 by <a href="www.vtisc.com" title="">vtisc.com</a> </p>
+				</div>
+			</div>
+		</div>		
+	</div> <?php /* #footer */ ?>
+
+
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</body>
+</html>
